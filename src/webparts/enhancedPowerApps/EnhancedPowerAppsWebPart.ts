@@ -55,6 +55,7 @@ export interface IEnhancedPowerAppsWebPartProps {
   appWebLink: string;
   useDynamicProp: boolean;
   dynamicPropName: string;
+  dynamicPropName2: string;
   border: boolean;
   layout: 'FixedHeight'|'AspectRatio';
   height: number;
@@ -249,16 +250,26 @@ export default class EnhancedPowerAppsWebPart extends BaseClientSideWebPart<IEnh
                   fields: [
                     PropertyPaneDynamicField('dynamicProp', {
                       label: strings.DynamicPropFieldLabel
-                    }),
-                    PropertyPaneDynamicField('dynamicProp2', {
-                      label: strings.DynamicPropFieldLabel
-                    }),
+                    })
                   ]
                 }),
                 this.properties.useDynamicProp === true && PropertyPaneTextField('dynamicPropName', {
                   label: strings.DynamicPropsNameFieldLabel,
                   description: strings.DynamicsPropNameDescriptionLabel,
                   value: this.properties.dynamicPropName
+                }),
+                this.properties.useDynamicProp === true && PropertyPaneDynamicFieldSet({
+                  label: strings.SelectDynamicSource,
+                  fields: [
+                    PropertyPaneDynamicField('dynamicProp2', {
+                      label: strings.SecondDynamicPropFieldLabel
+                    })
+                  ]
+                }),
+                this.properties.useDynamicProp === true && PropertyPaneTextField('dynamicPropName2', {
+                  label: strings.DynamicPropsNameFieldLabel2,
+                  description: strings.DynamicsPropNameDescriptionLabel,
+                  value: this.properties.dynamicPropName2
                 })
               ]
             },

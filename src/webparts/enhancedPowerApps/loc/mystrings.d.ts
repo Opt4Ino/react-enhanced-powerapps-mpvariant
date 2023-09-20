@@ -5,7 +5,9 @@ declare interface IEnhancedPowerAppsWebPartStrings {
   ThemeGroupName: string;
   DynamicsPropNameDescriptionLabel: string;
   DynamicPropsNameFieldLabel: string;
+  DynamicPropsNameFieldLabel2: string;
   DynamicPropFieldLabel: string;
+  SecondDynamicPropFieldLabel: string;
   SelectDynamicSource: string;
   UseDynamicPropsFieldLabel: string;
   DynamicsPropsGroupDescription2: string;

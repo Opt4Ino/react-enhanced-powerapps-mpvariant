@@ -16,6 +16,10 @@ import { IEnhancedPowerAppsState } from './IEnhancedPowerAppsState';
 
 export default class EnhancedPowerApps extends React.Component<IEnhancedPowerAppsProps, IEnhancedPowerAppsState> {
 
+  public encodeSingleDynamicPropertyName(dynPropName: string, dynProp: string): string {
+    return `&${encodeURIComponent(dynPropName)}=${encodeURIComponent(dynProp)}`;
+  }
+
   public render(): React.ReactElement<IEnhancedPowerAppsProps> {
     const {
       dynamicProp,
@@ -35,7 +39,7 @@ export default class EnhancedPowerApps extends React.Component<IEnhancedPowerApp
     const { semanticColors }: IReadonlyTheme = themeVariant;
 
     // If we passed a dynamic property, add it as a query string parameter
-    const dynamicPropValue: string = useDynamicProp && dynamicProp !== undefined ? `&${encodeURIComponent(dynamicPropName)}=${encodeURIComponent(dynamicProp)}`:'';
+    const dynamicPropValue: string = useDynamicProp && dynamicProp !== undefined ? this.encodeSingleDynamicPropertyName(dynamicPropName,dynamicProp):'';
 
     // We can take an app id or a full link. We'll assume (for now) that people are passing a valid app URL
     // would LOVE to find an API to retrieve list of valid apps
