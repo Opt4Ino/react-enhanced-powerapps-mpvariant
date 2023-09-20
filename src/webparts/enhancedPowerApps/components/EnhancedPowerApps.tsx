@@ -16,18 +16,25 @@ import { IEnhancedPowerAppsState } from './IEnhancedPowerAppsState';
 
 export default class EnhancedPowerApps extends React.Component<IEnhancedPowerAppsProps, IEnhancedPowerAppsState> {
 
-  public encodeSingleDynamicPropertyName(dynPropName: string, dynProp: string): string {
-    return `&${encodeURIComponent(dynPropName)}=${encodeURIComponent(dynProp)}`;
+  public encodeSingleDynamicPropertyNameOrEmptyString(dynPropName: string, dynProp: string): string {
+    if( this.props.useDynamicProp && dynProp !== undefined) {
+      return `&${encodeURIComponent(dynPropName)}=${encodeURIComponent(dynProp)}`;
+    } else {
+      return '';
+    }
+    
   }
 
   public render(): React.ReactElement<IEnhancedPowerAppsProps> {
     const {
-      dynamicProp,
+      dynamicProp1: dynamicProp,
+      dynamicProp2,
       themeVariant,
       themeValues,
       appWebLink,
       useDynamicProp,
-      dynamicPropName,
+      dynamicPropName1: dynamicPropName,
+      dynamicPropName2,
       locale,
       border,
       height
@@ -39,7 +46,8 @@ export default class EnhancedPowerApps extends React.Component<IEnhancedPowerApp
     const { semanticColors }: IReadonlyTheme = themeVariant;
 
     // If we passed a dynamic property, add it as a query string parameter
-    const dynamicPropValue: string = useDynamicProp && dynamicProp !== undefined ? this.encodeSingleDynamicPropertyName(dynamicPropName,dynamicProp):'';
+    const dynamicPropValue: string = this.encodeSingleDynamicPropertyNameOrEmptyString(dynamicPropName,dynamicProp);
+    const dynamicPropValue2: string = this.encodeSingleDynamicPropertyNameOrEmptyString(dynamicPropName2,dynamicProp2);
 
     // We can take an app id or a full link. We'll assume (for now) that people are passing a valid app URL
     // would LOVE to find an API to retrieve list of valid apps
@@ -62,7 +70,7 @@ export default class EnhancedPowerApps extends React.Component<IEnhancedPowerApp
 
 
     // Build the frame url
-    const frameUrl: string = `${appUrl}?source=SPClient-EnhancedPowerAppsWebPart&amp;locale=${locale}&amp;enableOnBehalfOf=true&amp;authMode=onbehalfof&amp;hideNavBar=true&amp;${dynamicPropValue}${themeParams}&locale=${locale}`;
+    const frameUrl: string = `${appUrl}?source=SPClient-EnhancedPowerAppsWebPart&amp;locale=${locale}&amp;enableOnBehalfOf=true&amp;authMode=onbehalfof&amp;hideNavBar=true&amp;${dynamicPropValue}${dynamicPropValue2}${themeParams}&locale=${locale}`;
 
     return (
       <div className={ styles.enhancedPowerApps } style={needConfiguration ? {height:`315px`}:{height:`${height}px`}}>

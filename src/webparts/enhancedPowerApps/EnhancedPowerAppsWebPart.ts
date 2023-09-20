@@ -84,6 +84,7 @@ export default class EnhancedPowerAppsWebPart extends BaseClientSideWebPart<IEnh
   public render(): void {
     // Context variables and dynamic properties
     const dynamicProp: string | undefined = this.properties.dynamicProp.tryGetValue();
+    const dynamicProp2: string | undefined = this.properties.dynamicProp2.tryGetValue();
     const locale: string = this.context.pageContext.cultureInfo.currentCultureName;
 
     // Get the client width. This is how we'll calculate the aspect ratio and resize the iframe
@@ -125,9 +126,11 @@ export default class EnhancedPowerAppsWebPart extends BaseClientSideWebPart<IEnh
       EnhancedPowerApps,
       {
         locale: locale,
-        dynamicProp: dynamicProp,
+        dynamicProp1: dynamicProp,
+        dynamicProp2: dynamicProp2,
         useDynamicProp: this.properties.useDynamicProp,
-        dynamicPropName: this.properties.dynamicPropName,
+        dynamicPropName1: this.properties.dynamicPropName,
+        dynamicPropName2: this.properties.dynamicPropName2, 
         onConfigure: this._onConfigure,
         appWebLink: this.properties.appWebLink,
         width: clientWidth,

@@ -14,15 +14,26 @@ export interface IEnhancedPowerAppsProps {
   onConfigure: () => void;
 
   /**
-   * The selected dynamic property to pass
+   * The first selected dynamic property to pass
    */
-  dynamicProp: string;
+  dynamicProp1: string;
 
   /**
-   * The parameter name of the dynamic prop
+   * The first parameter name of the dynamic prop
    *
    */
-  dynamicPropName: string;
+  dynamicPropName1: string;
+
+  /**
+   * The second selected dynamic property to pass
+   */
+  dynamicProp2: string;
+
+  /**
+   * The second parameter name of the dynamic prop
+   *
+   */
+  dynamicPropName2: string;
 
   /**
    * Whether we use dynamic props
