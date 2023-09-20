@@ -1,0 +1,20 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "react-enhanced-powerapps-client-side-solution-mpvariant",
+        "id": "08483cd5-42e7-4eed-b71f-bc2c5418157f",
+        "version": "1.0.0.0",
+        "includeClientSideAssets": true,
+        "isDomainIsolated": false,
+        "developer": {
+            "name": "Razvan Hrestic",
+            "websiteUrl": "https://github.com/Opt4Ino/react-enhanced-powerapps-mpvariant",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "mpnId": ""
+        }
+    },
+    "paths": {
+        "zippedPackage": "solution/react-enhanced-powerapps.sppkg"
+    }
+}
