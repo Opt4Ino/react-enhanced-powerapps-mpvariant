@@ -15,6 +15,6 @@
         }
     },
     "paths": {
-        "zippedPackage": "solution/react-enhanced-powerapps.sppkg"
+        "zippedPackage": "solution/react-enhanced-powerapps-mpvariant.sppkg"
     }
 }
