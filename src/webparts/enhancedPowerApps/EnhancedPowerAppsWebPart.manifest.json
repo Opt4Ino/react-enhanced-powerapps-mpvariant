@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "3d2f89fa-3b9e-4876-82c2-c15ff82190f1",
-  "alias": "EnhancedPowerAppsWebPart",
+  "id": "fdc88724-d818-43b8-bbca-b24b1c4cdf9d",
+  "alias": "EnhancedPowerAppsWebPartMPVariant",
   "componentType": "WebPart",
 
   "version": "*",
@@ -15,12 +15,12 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
     "group": { "default": "Other" },
-    "title": { "default": "Enhanced PowerApps" },
+    "title": { "default": "Enhanced PowerApps (Multi-Property)" },
     "description": { "default": "Embed Power Apps in a SharePoint page, and add theme supports and dynamic properties" },
     "officeFabricIconFontName": "PowerApps",
     "properties": {
       "layout": 'AspectRatio',
-      "aspectratio": '16:9',
+      "aspectratio": '16:9'
     }
   }]
 }
