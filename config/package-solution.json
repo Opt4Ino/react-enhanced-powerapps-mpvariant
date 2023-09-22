@@ -3,7 +3,7 @@
     "solution": {
         "name": "react-enhanced-powerapps-client-side-solution-mpvariant",
         "id": "08483cd5-42e7-4eed-b71f-bc2c5418157f",
-        "version": "1.0.0.0",
+        "version": "1.0.0.1",
         "includeClientSideAssets": true,
         "isDomainIsolated": false,
         "developer": {

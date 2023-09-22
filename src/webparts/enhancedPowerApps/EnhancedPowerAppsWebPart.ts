@@ -307,6 +307,9 @@ export default class EnhancedPowerAppsWebPart extends BaseClientSideWebPart<IEnh
       // information to be serialized by the SharePoint Framework.
       'dynamicProp': {
         dynamicPropertyType: 'string'
+      },
+      'dynamicProp2': {
+        dynamicPropertyType: 'string'
       }
     };
   }
